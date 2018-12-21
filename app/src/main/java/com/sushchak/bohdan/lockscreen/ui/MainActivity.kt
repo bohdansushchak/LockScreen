@@ -1,14 +1,15 @@
-package com.sushchak.bohdan.lockscreen
+package com.sushchak.bohdan.lockscreen.ui
 
 import android.content.Intent
 import android.net.Uri
 import android.os.Build
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.Settings
 import android.support.annotation.RequiresApi
+import android.support.v7.app.AppCompatActivity
 import android.widget.Toast
-
+import com.sushchak.bohdan.lockscreen.service.LockScreenService
+import com.sushchak.bohdan.lockscreen.R
 
 class MainActivity : AppCompatActivity() {
 
@@ -16,6 +17,14 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        supportFragmentManager
+            .beginTransaction()
+            .replace(
+                R.id.settings_content,
+                SettingsFragment()
+            )
+            .commit()
 
         if (!Settings.canDrawOverlays(this)) {
             // ask for setting

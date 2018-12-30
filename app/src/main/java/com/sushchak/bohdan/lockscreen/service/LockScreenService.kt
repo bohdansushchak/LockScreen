@@ -13,7 +13,7 @@ import android.content.Context
 import android.content.IntentFilter
 import android.os.Build
 import android.os.SystemClock
-import com.sushchak.bohdan.lockscreen.control.AlertView
+import com.sushchak.bohdan.lockscreen.control.LayoutAlertView
 
 class LockScreenService : Service() {
 
@@ -21,7 +21,7 @@ class LockScreenService : Service() {
     private var isShowing = false
 
     private lateinit var windowManager: WindowManager
-    private lateinit var alertView: AlertView
+    private lateinit var alertView: LayoutAlertView
 
     var params: WindowManager.LayoutParams? = null
 
@@ -41,7 +41,7 @@ class LockScreenService : Service() {
         )
         params?.gravity = Gravity.CENTER
 
-        alertView = AlertView(context = this@LockScreenService)
+        alertView = LayoutAlertView(context = this@LockScreenService)
         alertView.title = "Title"
         alertView.content = "Alert message"
         alertView.buttonText = "Ok"

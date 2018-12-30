@@ -2,6 +2,7 @@ package com.sushchak.bohdan.lockscreen.control
 
 import android.content.Context
 import android.support.v7.widget.CardView
+import android.text.Layout
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
@@ -23,10 +24,10 @@ class AlertView(
     }
 
     init {
-        creaateView()
+        createView()
     }
 
-    private fun creaateView() {
+    private fun createView() {
 
         linearLayout.orientation = LinearLayout.VERTICAL
         val params = LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)
@@ -36,6 +37,9 @@ class AlertView(
         tvTitle.apply {
             textSize = 16f
             text = title
+            layoutParams = ViewGroup.LayoutParams (ViewGroup.LayoutParams.WRAP_CONTENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT)
+
         }
 
         tvContent.apply {
@@ -43,9 +47,10 @@ class AlertView(
             text = content
         }
 
-        button.text = buttonText
-        button.setOnClickListener(this)
-
+        button.apply {
+            text = buttonText
+            setOnClickListener(this@AlertView)
+        }
 
         linearLayout.addView(tvTitle)
         linearLayout.addView(tvContent)

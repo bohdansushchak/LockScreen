@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        card_view:cardCornerRadius="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:baselineAligned="true">
+
+        <TextView
+                android:id="@+id/tvTitle"
+                android:text="Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="5dp"
+                android:textColor="#000"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:fontFamily="serif"/>
+
+        <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray"/>
+
+        <TextView
+                android:id="@+id/tvContent"
+                android:text="Content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:textColor="#313030"
+                android:textSize="14sp"
+                android:fontFamily="serif"/>
+
+        <Button
+                android:id="@+id/btnOk"
+                android:background="#00ffffff"
+                android:text="Ok"
+                android:textColor="#015eff"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_gravity="end"/>
+
+    </LinearLayout>
+
+
+</android.support.v7.widget.CardView>
